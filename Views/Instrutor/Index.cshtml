@@ -1,0 +1,54 @@
+﻿@model IEnumerable<WebApplication.mvc.Models.Instrutor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de Instrutores</h1>
+
+<p>
+    <a type="button" class="btn btn-success" asp-action="Create">Cadastrar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                Data Nascimento
+            </th>
+            <th>
+                E-mail
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Instagram)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DtNascimento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Instagram)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" type="button" class="btn btn-info">Editar</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" type="button" class="btn btn-warning">Exibir</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" type="button" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,59 @@
+﻿@model WebApplication.mvc.Models.Live
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Live Detalhado</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            Descrição:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt class = "col-sm-2">
+            Instrutor:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Instrutor.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            Inscritos:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Inscrito.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            Hora Início:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HoraInicio)
+        </dd>
+        <dt class = "col-sm-2">
+            Duração Minutos:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DuracaoMin)
+        </dd>
+        <dt class = "col-sm-2">
+            Valor Inscrição:
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ValorInscricao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-success">Editar</a>
+    <a asp-action="Index" class="btn btn-danger">Voltar</a>
+</div>

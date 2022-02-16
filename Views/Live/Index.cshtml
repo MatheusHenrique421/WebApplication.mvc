@@ -1,0 +1,66 @@
+﻿@model IEnumerable<WebApplication.mvc.Models.Live>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista de Lives</h1>
+
+<p>
+    <a type="button" class="btn btn-success" asp-action="Create">Cadastrar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome Live
+            </th>
+            <th>
+                Descrição
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Instrutor)
+            </th>
+            <th>
+                Hora Início
+            </th>
+            <th>
+                Duração em Minutos
+            </th>
+            <th>
+                Valor Inscrição
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Instrutor.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoraInicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DuracaoMin)
+                </td>
+                <td>
+                    <b>R$: </b>@Html.DisplayFor(modelItem => item.ValorInscricao)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" type="button" class="btn btn-info">Editar</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" type="button" class="btn btn-warning">Exibir</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" type="button" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

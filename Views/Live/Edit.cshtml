@@ -1,0 +1,55 @@
+﻿@model WebApplication.mvc.Models.Live
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar Live</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label">Nome:</label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label">Descrição:</label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InstrutorId" class="control-label">Instrutor:</label>
+                <select asp-for="InstrutorId" class="form-control" asp-items="ViewBag.InstrutorId"></select>
+                <span asp-validation-for="InstrutorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HoraInicio" class="control-label">Hora Início:</label>
+                <input asp-for="HoraInicio" class="form-control" />
+                <span asp-validation-for="HoraInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DuracaoMin" class="control-label">Duração em Minutos:</label>
+                <input asp-for="DuracaoMin" class="form-control" />
+                <span asp-validation-for="DuracaoMin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorInscricao" class="control-label">Valor Inscrição:</label>
+                <input asp-for="ValorInscricao" class="form-control" />
+                <span asp-validation-for="ValorInscricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-danger">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
