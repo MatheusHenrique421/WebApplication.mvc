@@ -10,8 +10,8 @@ using WebApplication.mvc.Data;
 namespace WebApplication.mvc.Migrations
 {
     [DbContext(typeof(ContextBase))]
-    [Migration("20220216015413_First")]
-    partial class First
+    [Migration("20220216015459_PrimeiraMigracao")]
+    partial class PrimeiraMigracao
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -67,9 +67,9 @@ namespace WebApplication.mvc.Migrations
                         .HasColumnName("Id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("DtNascimento")
+                    b.Property<DateTime>("DataNascimento")
                         .HasColumnType("datetime2")
-                        .HasColumnName("DtNascimento");
+                        .HasColumnName("DataNascimento");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)")
@@ -106,9 +106,9 @@ namespace WebApplication.mvc.Migrations
                         .HasColumnName("Id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("DtNascimento")
+                    b.Property<DateTime>("DataNascimento")
                         .HasColumnType("datetime2")
-                        .HasColumnName("DtNascimento");
+                        .HasColumnName("DataNascimento");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)")

@@ -3,17 +3,15 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebApplication.mvc.Data;
 
 namespace WebApplication.mvc.Migrations
 {
     [DbContext(typeof(ContextBase))]
-    [Migration("20220216015459_PrimeiraMigracao")]
-    partial class PrimeiraMigracao
+    partial class ContextBaseModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,9 +65,9 @@ namespace WebApplication.mvc.Migrations
                         .HasColumnName("Id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("DtNascimento")
+                    b.Property<DateTime>("DataNascimento")
                         .HasColumnType("datetime2")
-                        .HasColumnName("DtNascimento");
+                        .HasColumnName("DataNascimento");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)")
@@ -106,9 +104,9 @@ namespace WebApplication.mvc.Migrations
                         .HasColumnName("Id")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("DtNascimento")
+                    b.Property<DateTime>("DataNascimento")
                         .HasColumnType("datetime2")
-                        .HasColumnName("DtNascimento");
+                        .HasColumnName("DataNascimento");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)")

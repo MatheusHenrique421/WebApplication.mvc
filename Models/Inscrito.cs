@@ -7,9 +7,9 @@ namespace WebApplication.mvc.Models
 	[Table("Inscrito")]
 	public class Inscrito
 	{
-		[Display(Name = "Id")]
-		[Column("Id")]
-		public int Id { get; set; }
+		[Display(Name = "InscritoID")]
+		[Column("InscritoID")]
+		public int InscritoID { get; set; }
 
 		[Display(Name = "Nome")]
 		[Column("Nome")]
@@ -17,17 +17,17 @@ namespace WebApplication.mvc.Models
 
 		[DataType(DataType.Date)]
 		[DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
-		[Display(Name = "DtNascimento")]
-		[Column("DtNascimento")]
-		public DateTime DtNascimento { get; set; }
+		[Display(Name = "DataNascimento")]
+		[Column("DataNascimento")]
+		public DateTime DataNascimento { get; set; }
 
 		[Display(Name = "Email")]
 		[Column("Email")]
 		public string Email { get; set; }
 
-		[Display(Name = "Instagram")]
-		[Column("Instagram")]
-		public string Instagram { get; set; }
+		[Display(Name = "EnderecoInstagram")]
+		[Column("EnderecoInstagram")]
+		public string EnderecoInstagram { get; set; }
 
 		public Live Live { get; set; }
 	}

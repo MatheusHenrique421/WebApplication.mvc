@@ -30,7 +30,7 @@ namespace WebApplication.mvc.Controllers
             }
 
             var inscrito = await _context.Inscrito
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.InscritoID == id);
             if (inscrito == null)
             {
                 return NotFound();
@@ -50,7 +50,7 @@ namespace WebApplication.mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,DtNascimento,Email,Instagram")] Inscrito inscrito)
+        public async Task<IActionResult> Create([Bind("InscritoID,Nome,Email,EnderecoInstagram,DataNascimento")] Inscrito inscrito)
         {
             if (ModelState.IsValid)
             {
@@ -82,9 +82,9 @@ namespace WebApplication.mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,DtNascimento,Email,Instagram")] Inscrito inscrito)
+        public async Task<IActionResult> Edit(int id, [Bind("InscritoID,Nome,Email,EnderecoInstagram,DataNascimento")] Inscrito inscrito)
         {
-            if (id != inscrito.Id)
+            if (id != inscrito.InscritoID)
             {
                 return NotFound();
             }
@@ -98,7 +98,7 @@ namespace WebApplication.mvc.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!InscritoExists(inscrito.Id))
+                    if (!InscritoExists(inscrito.InscritoID))
                     {
                         return NotFound();
                     }
@@ -121,7 +121,7 @@ namespace WebApplication.mvc.Controllers
             }
 
             var inscrito = await _context.Inscrito
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.InscritoID  == id);
             if (inscrito == null)
             {
                 return NotFound();
@@ -143,7 +143,7 @@ namespace WebApplication.mvc.Controllers
 
         private bool InscritoExists(int id)
         {
-            return _context.Inscrito.Any(e => e.Id == id);
+            return _context.Inscrito.Any(e => e.InscritoID == id);
         }
     }
 }

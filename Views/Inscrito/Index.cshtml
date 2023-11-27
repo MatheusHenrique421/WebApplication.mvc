@@ -22,7 +22,7 @@
                 @Html.DisplayNameFor(model => model.Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Instagram)
+                @Html.DisplayNameFor(model => model.EnderecoInstagram)
             </th>
             <th></th>
         </tr>
@@ -35,18 +35,18 @@
                     @Html.DisplayFor(modelItem => item.Nome)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DtNascimento)
+                    @Html.DisplayFor(modelItem => item.DataNascimento)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Email)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Instagram)
+                    @Html.DisplayFor(modelItem => item.EnderecoInstagram)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id" type="button" class="btn btn-info">Editar</a>
-                    <a asp-action="Details" asp-route-id="@item.Id" type="button" class="btn btn-warning">Exibir</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id" type="button" class="btn btn-danger">Excluir</a>
+                    <a asp-action="Edit" asp-route-id="@item.InscritoID" type="button" class="btn btn-info">Editar</a>
+                    <a asp-action="Details" asp-route-id="@item.InscritoID" type="button" class="btn btn-warning">Exibir</a>
+                    <a asp-action="Delete" asp-route-id="@item.InscritoID" type="button" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
         }

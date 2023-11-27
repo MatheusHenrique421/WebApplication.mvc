@@ -26,7 +26,7 @@ namespace WebApplication.mvc.Data
 		{
 			if (!optionsBuilder.IsConfigured)
 			{
-				optionsBuilder.UseSqlServer(connectionString: @"Server=DESKTOP-QH1L24U;Database=WebApplication;Trusted_Connection=True;");
+				optionsBuilder.UseSqlServer(connectionString: @"Server=MHS421;Database=teste;Trusted_Connection=True;");
 				base.OnConfiguring(optionsBuilder);
 			}
 		}
